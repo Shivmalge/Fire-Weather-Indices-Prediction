@@ -11,11 +11,16 @@ inputs = []
 labels = ["Temperature", "RH", "Ws", "Rain", "FFMC", "DMC", "ISI", "Classes", "Region"]
 
 for label in labels:
-    input_value = st.text_input(label)
-    try:
-        inputs.append(float(input_value) if input_value else np.nan)
-    except ValueError:
-        inputs.append(np.nan)
+    if label in ["Classes", "Region"]:  # For "Classes" and "Region", use a dropdown
+        input_value = st.selectbox(label, options=[0, 1], key=label)
+        inputs.append(input_value)
+    else:
+        input_value = st.text_input(label)
+        try:
+            inputs.append(float(input_value) if input_value else np.nan)
+        except ValueError:
+            inputs.append(np.nan)
+    
 
 ridge_model = pickle.load(open('ridge.pkl','rb'))
 standard_scaler = pickle.load(open('scaler.pkl','rb'))
