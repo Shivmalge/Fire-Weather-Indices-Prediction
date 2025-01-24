@@ -12,7 +12,7 @@ labels = ["Temperature", "RH", "Ws", "Rain", "FFMC", "DMC", "ISI", "Classes", "R
 
 for label in labels:
     if label in ["Classes", "Region"]:  # For "Classes" and "Region", use a dropdown
-        input_value = st.selectbox(label, options=["No Fire", "Fire"], key=label)
+        input_value = st.selectbox(label, options=[0,1], key=label)
         inputs.append(input_value)
     else:
         input_value = st.text_input(label)
