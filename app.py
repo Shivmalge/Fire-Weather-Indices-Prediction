@@ -4,7 +4,7 @@ import pickle
 import numpy as np
 
 
-st.header('Temperature FWI recommender')
+st.header('Temperature FWI(Fire Weather Indices) Recommender')
 
 inputs = []
 
