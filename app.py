@@ -11,7 +11,7 @@ inputs = []
 labels = ["Temperature", "RH (Relative Humidity)", "Ws (Wind Speed)", "Rain", "FFMC (Fine Fuel Moisture Code)", "DMC (Duff Moisture Code)", "ISI (Initial Spread Index)", "Classes (Not Fire, Fire)", "Region"]
 
 for label in labels:
-    if label in ["Classes", "Region"]:  # For "Classes" and "Region", use a dropdown
+    if label in ["Classes (Not Fire, Fire)", "Region"]:  # For "Classes" and "Region", use a dropdown
         input_value = st.selectbox(label, options=[0,1], key=label)
         inputs.append(input_value)
     else:
