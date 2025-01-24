@@ -8,7 +8,7 @@ st.header('Temperature FWI recommender')
 
 inputs = []
 
-labels = ["Temperature", "RH", "Ws", "Rain", "FFMC", "DMC", "ISI", "Classes", "Region"]
+labels = ["Temperature", "RH (Relative Humidity)", "Ws (Wind Speed)", "Rain", "FFMC (Fine Fuel Moisture Code)", "DMC (Duff Moisture Code)", "ISI (Initial Spread Index)", "Classes (Not Fire, Fire)", "Region"]
 
 for label in labels:
     if label in ["Classes", "Region"]:  # For "Classes" and "Region", use a dropdown
